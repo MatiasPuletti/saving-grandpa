@@ -27,13 +27,12 @@ canvas5.height = 600;
 const grid = 80;
 let keys = [];
 let score = 0;
-let collisionsCount = 0;
+let infectedCount = 0;
 let frame = 0;
 let gameSpeed = 1;
 
 const particlesArray = [];
 const maxParticles = 300;
-const ripplesArray = [];
 const virusArray = [];
 const logsArray = [];
 

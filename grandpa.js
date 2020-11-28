@@ -46,7 +46,7 @@ class Grandpa {
       if (this.y < 0) scored();
     }
     draw() {
-      ctx3.fillStyle = 'green';
+      ctx3.fillStyle = 'blue';
       ctx3.fillRect(this.x, this.y, this.width, this.height);
     }
     jump() {}
