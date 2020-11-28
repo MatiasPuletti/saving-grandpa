@@ -34,7 +34,7 @@ window.addEventListener('keyup', function (e) {
 function scored() {
   score++;
   gameSpeed += 0.05;
-  // Take frog back to starting position
+  // Take grandpa back to starting position
   grandpa.x = canvas.width / 2 - grandpa.width / 2;
   grandpa.y = canvas.height - grandpa.height - 40;
 }
