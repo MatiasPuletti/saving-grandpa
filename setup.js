@@ -23,22 +23,48 @@ const ctx5 = canvas5.getContext('2d');
 canvas5.width = 600;
 canvas5.height = 600;
 
-// Global Variables
+//const instructions = document.getElementById('instructions');
+//const ctx = canvas.getContext('2d');
+//canvas.width = 600;
+//canvas.height = 600;
+
+
+// global variables
 const grid = 80;
 let keys = [];
 let score = 0;
 let infectedCount = 0;
 let frame = 0;
 let gameSpeed = 1;
+let safe = false;
+
+let startBtn = document.getElementById('startBtn');
 
 const particlesArray = [];
 const maxParticles = 300;
+const ripplesArray = [];
 const virusArray = [];
 const logsArray = [];
 
-// Images
-const background = new Image();
-background.src = '/assets/background.png';
+// images
+const background_lvl2 = new Image();
+background_lvl2.src = 'background_lvl2.png';
 
 const grass = new Image();
-grass.src = '/assets/grass.png';
+grass.src = 'grass.png';
+
+const collisions = new Image();
+collisions.src = 'collisions.png';
+
+const turtle = new Image();
+turtle.src = 'turtles.png';
+
+const log = new Image();
+log.src = 'log.png';
+
+const car = new Image();
+car.src = 'cars.png';
+let numberOfCars = 3;
+
+const grandpaSprite = new Image();
+grandpaSprite.src = 'grandpa_spritesheet.png';
