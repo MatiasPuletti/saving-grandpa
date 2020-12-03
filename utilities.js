@@ -1,22 +1,40 @@
-function animate() {
-  ctx1.clearRect(0, 0, canvas.width, canvas.height);
-  ctx2.clearRect(0, 0, canvas.width, canvas.height);
-  ctx3.clearRect(0, 0, canvas.width, canvas.height);
-  ctx4.clearRect(0, 0, canvas.width, canvas.height);
-  ctx5.clearRect(0, 0, canvas.width, canvas.height);
-  handleRipples();
-  ctx2.drawImage(background_lvl2, 0, 0);
-  handleParticles();
-  grandpa.draw();
-  grandpa.update();
- handleObstacles();
-  handleScoreBoard();
-  ctx4.drawImage(grass, 0, 0);
-  frame++;
-  requestAnimationFrame(animate);
-}
-animate();
+let active = true;
 
+function animate() {
+  if (active) {
+    ctx1.clearRect(0, 0, canvas.width, canvas.height);
+    ctx2.clearRect(0, 0, canvas.width, canvas.height);
+    ctx3.clearRect(0, 0, canvas.width, canvas.height);
+    ctx4.clearRect(0, 0, canvas.width, canvas.height);
+    ctx5.clearRect(0, 0, canvas.width, canvas.height);
+    handleRipples();
+    ctx1.drawImage(water, 0, 0);
+
+    ctx2.drawImage(background_lvl2, 0, 0);
+
+    handleParticles();
+    grandpa.draw();
+    grandpa.update();
+    handleObstacles();
+    handleScoreBoard();
+    ctx4.drawImage(grass, 0, 0);
+    frame++;
+    requestAnimationFrame(animate);
+    gameOver();
+  }
+}
+
+window.addEventListener('keydown', function (e) {
+  if (e.keyCode === 32) {
+    console.log(e);
+    // remove instructions
+    let parent = document.getElementsByClassName('wrapper');
+    let child = document.getElementById('instructions');
+    child.style.display = 'none';
+    console.dir(parent);
+    animate();
+  }
+});
 // event listeners
 window.addEventListener('keydown', function (e) {
   keys = [];
@@ -61,8 +79,6 @@ function collision(first, second) {
   );
 }
 
-// Still to do: Game Over + Reset button | StartGame button
-
 // Reset game
 function resetGame() {
   grandpa.x = canvas.width / 2 - grandpa.width / 2;
@@ -71,10 +87,10 @@ function resetGame() {
   gameSpeed = 1;
 }
 
-// Game Over function 
+// Game Over function
 function gameOver() {
-  if(infectedCount.length === 10 ){
-    alert("Game Over! Wanna try again?");
+  if (infectedCount === 10) {
+    active = false;
+    alert('Game Over!'); // poner un event listener aca para que vuelva a pedirme jugar
   }
 }
-

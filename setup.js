@@ -23,11 +23,6 @@ const ctx5 = canvas5.getContext('2d');
 canvas5.width = 600;
 canvas5.height = 600;
 
-//const instructions = document.getElementById('instructions');
-//const ctx = canvas.getContext('2d');
-//canvas.width = 600;
-//canvas.height = 600;
-
 
 // global variables
 const grid = 80;
@@ -37,8 +32,7 @@ let infectedCount = 0;
 let frame = 0;
 let gameSpeed = 1;
 let safe = false;
-
-let startBtn = document.getElementById('startBtn');
+let hit = document.getElementById('hit');
 
 const particlesArray = [];
 const maxParticles = 300;
@@ -68,3 +62,6 @@ let numberOfCars = 3;
 
 const grandpaSprite = new Image();
 grandpaSprite.src = 'grandpa_spritesheet.png';
+
+const water = new Image();
+water.src = 'water.png';
