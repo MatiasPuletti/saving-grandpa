@@ -34,7 +34,8 @@ let gameSpeed = 1;
 let safe = false;
 const hitSound = new Audio('hit.mp3');
 const gameOverSound = new Audio('gameOver.mp3');
-
+const levelUp = new Audio ('levelup.mp3');
+const stepSound = new Audio ('step.wav');
 
 
 const particlesArray = [];

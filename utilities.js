@@ -40,6 +40,7 @@ window.addEventListener('keydown', function (e) {
   keys[e.keyCode] = true;
   if (keys[37] || keys[38] || keys[39] || keys[40]) {
     grandpa.jump();
+    stepSound.play();
   }
 });
 
@@ -54,6 +55,7 @@ function scored() {
   gameSpeed += 0.05;
   grandpa.x = canvas.width / 2 - grandpa.width / 2;
   grandpa.y = canvas.height - grandpa.height - 40;
+  levelUp.play();
 }
 
 function handleScoreBoard() {
@@ -91,7 +93,6 @@ function gameOver() {
   if (infectedCount === 5) {
     active = false;
     gameOverSound.play();
-    alert('Game Over!'); 
-
+    alert('Game Over!');
   }
 }
