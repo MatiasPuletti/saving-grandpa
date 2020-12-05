@@ -88,10 +88,10 @@ function resetGame() {
 
 // Game Over function
 function gameOver() {
-  if (infectedCount === 10) {
+  if (infectedCount === 5) {
     active = false;
     gameOverSound.play();
-    alert('Game Over!'); // poner un event listener aca para que vuelva a pedirme jugar
+    alert('Game Over!'); 
 
   }
 }
