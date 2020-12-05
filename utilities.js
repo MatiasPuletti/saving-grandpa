@@ -9,9 +9,7 @@ function animate() {
     ctx5.clearRect(0, 0, canvas.width, canvas.height);
     handleRipples();
     ctx1.drawImage(water, 0, 0);
-
     ctx2.drawImage(background_lvl2, 0, 0);
-
     handleParticles();
     grandpa.draw();
     grandpa.update();
@@ -35,6 +33,7 @@ window.addEventListener('keydown', function (e) {
     animate();
   }
 });
+
 // event listeners
 window.addEventListener('keydown', function (e) {
   keys = [];
@@ -91,6 +90,8 @@ function resetGame() {
 function gameOver() {
   if (infectedCount === 10) {
     active = false;
+    gameOverSound.play();
     alert('Game Over!'); // poner un event listener aca para que vuelva a pedirme jugar
+
   }
 }

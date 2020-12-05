@@ -32,7 +32,10 @@ let infectedCount = 0;
 let frame = 0;
 let gameSpeed = 1;
 let safe = false;
-let hit = document.getElementById('hit');
+const hitSound = new Audio('hit.mp3');
+const gameOverSound = new Audio('gameOver.mp3');
+
+
 
 const particlesArray = [];
 const maxParticles = 300;

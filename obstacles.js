@@ -123,9 +123,8 @@ function handleObstacles() {
         50,
         50
       );
-
+      hitSound.play();
       resetGame();
-
     }
   }
   // collisions with logs/turles
